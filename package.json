@@ -31,9 +31,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "grunt serve",
+    "start": "node app.js",
     "test": "grunt test",
-    "postinstall": "./node_modules/bower/bin/bower install && grunt build"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "eslintConfig": {
     "env": {
