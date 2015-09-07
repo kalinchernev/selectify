@@ -33,7 +33,7 @@
   "scripts": {
     "start": "grunt serve",
     "test": "grunt test",
-    "postinstall": "./node_modules/bower/bin/bower install && grunt build",
+    "postinstall": "./node_modules/bower/bin/bower install && grunt build"
   },
   "eslintConfig": {
     "env": {
