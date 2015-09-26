@@ -18,24 +18,5 @@
         state ? list.trigger('show.list') : list.trigger('hide.list');
       }
     });
-    $('.trigger').on('click', function(){
-      var button = $(this).data();
-      switch (button.action) {
-        case 'show.dropdown':
-          list.trigger('show.dropdown');
-          break;
-        case 'hide.list':
-          list.trigger('hide.list');
-          break;
-        case 'show.list':
-          list.trigger('show.list');
-          break;
-        case 'hide.dropdown':
-          list.trigger('hide.dropdown');
-          break;
-        default :
-          break;
-      }
-    });
   });
 })(jQuery);
