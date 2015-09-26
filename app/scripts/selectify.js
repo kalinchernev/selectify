@@ -16,17 +16,13 @@
         $list.each(function() {
           var $select = $('<select />').addClass(listClass);
 
-          $(this).find('li').each(function() {
+          $(this).find(settings.item).each(function() {
             var currentClass = $(this).attr('class'), $option;
 
+            // flexible classes => flexible recognition of structure
+            // i.e. nested links now, could be any non-link later
             switch (currentClass) {
-              case 'lang-select-page__option is-selected':
-                $option = $('<option />');
-                $option.html($(this).html()).attr('selected', true);
-                $select.append($option);
-                break;
-
-              case 'lang-select-page__option lang-select-page__other':
+              default:
                 $option = $('<option />');
                 $option.attr('value', $(this).find('a').attr('href')).html($(this).html());
                 $select.append($option);
@@ -40,8 +36,8 @@
             $select.on({
               change: function() {
                 var optionHref = $(this).val(),
-                  $item = $list.find('li'),
-                  $location = $item.children('a[href="' + optionHref + '"]');
+                    $item = $list.find(settings.item),
+                    $location = $item.children('a[href="' + optionHref + '"]');
 
                 window.location.href = $location.attr('href');
               }
@@ -55,24 +51,14 @@
       var hideList = function() {
         settings.listWrapper
           .find(settings.listSelector)
-          .find(settings.other)
-          .hide();
-        settings.listWrapper
-          .find(settings.listSelector)
-          .find(settings.selected)
           .hide();
       };
       var showDropDown = function() {
         settings.listWrapper.find('select').show();
       };
       var showList = function() {
-        $(settings.listWrapper)
+        settings.listWrapper
           .find(settings.listSelector)
-          .find(settings.other)
-          .show();
-        $(settings.listWrapper)
-          .find(settings.listSelector)
-          .find(settings.selected)
           .show();
       };
 
