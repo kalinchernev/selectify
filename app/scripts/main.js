@@ -5,8 +5,7 @@
     var list = $('.selectify');
     list.selectify({
       listSelector: 'ul.selectify__list',
-      item: '.selectify__option',
-      other: '.selectify__other'
+      item: '.selectify__option'
     });
     $("[name='dropdown-switcher']").bootstrapSwitch({
       onSwitchChange: function(event, state) {
