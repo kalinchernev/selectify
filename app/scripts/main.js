@@ -1,11 +1,11 @@
 'use strict';
 
 (function ($) {
-  $(document).ready(function(){
+  $(document).ready(function () {
     var list = $('.selectify');
     list.selectify({
       listSelector: 'ul.selectify__list',
-      item: 'selectify__option',
+      item: '.selectify__option',
       other: '.selectify__other'
     });
     $("[name='dropdown-switcher']").bootstrapSwitch({
