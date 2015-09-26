@@ -28,7 +28,7 @@
     "time-grunt": "^1.1.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -39,7 +39,8 @@
     "env": {
       "node": true,
       "browser": true,
-      "mocha": true
+      "mocha": true,
+      "jquery": true
     },
     "rules": {
       "quotes": [
@@ -49,6 +50,11 @@
     }
   },
   "dependencies": {
-    "bower": "^1.5.2"
+    "body-parser": "^1.13.3",
+    "bower": "^1.5.2",
+    "compression": "^1.0.3",
+    "errorhandler": "^1.1.1",
+    "express": "^4.13.3",
+    "serve-favicon": "^2.0.1"
   }
 }
